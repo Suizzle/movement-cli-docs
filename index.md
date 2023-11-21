@@ -1,13 +1,13 @@
 ---
-title: "Aptos CLI"
+title: "Movement CLI"
 id: "index"
 hidden: false
 ---
 
-# Aptos CLI
+# Movement CLI
 
-The `aptos` tool is a command line interface (CLI) for developing on the Aptos blockchain, debugging, and for node operations. Please refer to the following documentation for more information:
+The `movement` tool is a command line interface (CLI) for developing on the Movement M1 blockchain, debugging, and for node operations. Please refer to the following documentation for more information:
 
-- ### [Install Aptos CLI](install-cli/index.md)
+- ### [Install Movement CLI](install-cli/index.md)
 
-- ### [Use Aptos CLI](use-cli/use-aptos-cli.md)
+- ### [Use Movement CLI](use-cli/use-movement-cli.md)
