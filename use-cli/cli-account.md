@@ -7,19 +7,19 @@ id: "cli-account"
 
 ### Fund an account with the faucet
 
-You can fund an account with the faucet via the CLI by using either an account address or with `default` (which defaults to the account address created with `aptos init`).
+You can fund an account with the faucet via the CLI by using either an account address or with `default` (which defaults to the account address created with `movement init`).
 
-For example, to fund the account `00f1f20ddd0b0dd2291b6e42c97274668c479bca70f07c6b6a80b99720779696` that was created above with the `aptos init` command:
+For example, to fund the account `00f1f20ddd0b0dd2291b6e42c97274668c479bca70f07c6b6a80b99720779696` that was created above with the `movement init` command:
 
 ```bash
-$ aptos account fund-with-faucet --account 00f1f20ddd0b0dd2291b6e42c97274668c479bca70f07c6b6a80b99720779696
+$ movement account fund-with-faucet --account 00f1f20ddd0b0dd2291b6e42c97274668c479bca70f07c6b6a80b99720779696
 {
   "Result": "Added 10000 coins to account 00f1f20ddd0b0dd2291b6e42c97274668c479bca70f07c6b6a80b99720779696"
 }
 ```
 
 ```bash
-$ aptos account fund-with-faucet --account default
+$ movement account fund-with-faucet --account default
 {
   "Result": "Added 10000 coins to account 00f1f20ddd0b0dd2291b6e42c97274668c479bca70f07c6b6a80b99720779696"
 }
@@ -30,13 +30,13 @@ $ aptos account fund-with-faucet --account default
 You can view the balance and transfer events (deposits and withdrawals) either by explicitly specifying the account address, as below:
 
 ```bash
-$ aptos account list --query balance --account 00f1f20ddd0b0dd2291b6e42c97274668c479bca70f07c6b6a80b99720779696
+$ movement account list --query balance --account 00f1f20ddd0b0dd2291b6e42c97274668c479bca70f07c6b6a80b99720779696
 ```
 
 or by specifying the `default` as below:
 
 ```bash
-$ aptos account list --query balance --account default
+$ movement account list --query balance --account default
 ```
 
 Both the above commands will generate the following information on your terminal:
@@ -77,13 +77,13 @@ Both the above commands will generate the following information on your terminal
 You can list the resources in an account from the command line. For example, see below for how to list the resources in the account you just created above:
 
 ```bash
-$ aptos account list --query resources --account default
+$ movement account list --query resources --account default
 ```
 
 or
 
 ```bash
-$ aptos account list --query resources --account 0xf1f20ddd0b0dd2291b6e42c97274668c479bca70f07c6b6a80b99720779696
+$ movement account list --query resources --account 0xf1f20ddd0b0dd2291b6e42c97274668c479bca70f07c6b6a80b99720779696
 ```
 
 Both the above commands will generate the following resource list information on your terminal:
@@ -92,7 +92,7 @@ Both the above commands will generate the following resource list information on
 {
   "Result": [
     {
-      "0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>": {
+      "0x1::coin::CoinStore<0x1::movement_coin::MovementCoin>": {
         "coin": {
           "value": "110000"
         },
@@ -165,7 +165,7 @@ Account addresses may differ from example to example in this section.
 :::
 
 ```bash
-$ aptos account list
+$ movement account list
 {
   "Result": [
     {
@@ -219,7 +219,7 @@ $ aptos account list
 Additionally, any place that takes an account can use the name of a profile:
 
 ```bash
-$ aptos account list --query resources --account superuser
+$ movement account list --query resources --account superuser
 {
   "Result": [
     {
@@ -274,7 +274,7 @@ You can pass different types of queries to view different items under an account
 'modules' are supported but more query types are coming. For example, to fetch modules:
 
 ```bash
-$ aptos account list --query modules
+$ movement account list --query modules
 {
   "Result": [
     {
@@ -355,10 +355,10 @@ $ aptos account list --query modules
 
 ### Transferring coins
 
-The Aptos CLI is a simple wallet as well, and can transfer coins between accounts.
+The Movement CLI is a simple wallet as well, and can transfer coins between accounts.
 
 ```bash
-$ aptos account transfer --account superuser --amount 100
+$ movement account transfer --account superuser --amount 100
 {
   "Result": {
     "gas_used": 73,
