@@ -1,27 +1,27 @@
 ---
-title: "Use the Aptos CLI"
-id: "use-aptos-cli"
+title: "Use the Movement CLI"
+id: "use-movement-cli"
 ---
 
-# Use the Aptos CLI
+# Use the Movement CLI
 
-The `aptos` tool is a command line interface (CLI) for developing on the Aptos blockchain, debugging, and for node operations. This document describes how to use the `aptos` CLI tool. To download or build the CLI, follow [Install Aptos CLI](../install-cli/index.md).
+The `movement` tool is a command line interface (CLI) for developing on the Movement blockchain, debugging, and for node operations. This document describes how to use the `movement` CLI tool. To download or build the CLI, follow [Install Movement CLI](../install-cli/index.md).
 
 For example on how to use specific commands, see the following documents:
 - [Configuration and Initialization](./cli-configuration.md)
 - [Account](./cli-account.md)
 - [Key](./cli-key.md)
 - [Node](./cli-node.md)
-- [Move](../../../move/move-on-aptos/cli.md)
+- [Move](../../../move/move-on-movement/cli.md)
 - [Genesis](./cli-genesis.md)
 
 ## Command line help
 
-Command line help is available. Type `aptos help` or `aptos --help` to see the available command options. See below the usage output from `aptos --help`:
+Command line help is available. Type `movement help` or `movement --help` to see the available command options. See below the usage output from `movement --help`:
 
 ```bash
 USAGE:
-    aptos <SUBCOMMAND>
+    movement <SUBCOMMAND>
 
 OPTIONS:
     -h, --help       Print help information
@@ -29,12 +29,12 @@ OPTIONS:
 
 SUBCOMMANDS:
     account       Tool for interacting with accounts
-    config        Tool for interacting with configuration of the Aptos CLI tool
-    genesis       Tool for setting up an Aptos chain Genesis transaction
+    config        Tool for interacting with configuration of the Movement CLI tool
+    genesis       Tool for setting up an Movement chain Genesis transaction
     governance    Tool for on-chain governance
     help          Print this message or the help of the given subcommand(s)
     info          Show build information about the CLI
-    init          Tool to initialize current directory for the aptos tool
+    init          Tool to initialize current directory for the movement tool
     key           Tool for generating, inspecting, and interacting with keys
     move          Tool for Move related operations
     multisig      Tool for interacting with multisig accounts
@@ -45,12 +45,12 @@ SUBCOMMANDS:
 
 ### Command-specific help
 
-Command-specific help is also available. For example, see below the usage output from `aptos move --help`:
+Command-specific help is also available. For example, see below the usage output from `movement move --help`:
 
 ```bash
 
 USAGE:
-    aptos move <SUBCOMMAND>
+    movement move <SUBCOMMAND>
 
 OPTIONS:
     -h, --help       Print help information
@@ -68,7 +68,7 @@ SUBCOMMANDS:
     coverage
             Computes coverage for a package
     create-resource-account-and-publish-package
-            Publishes the modules in a Move package to the Aptos blockchain under a resource account
+            Publishes the modules in a Move package to the Movement blockchain under a resource account
     disassemble
             Disassemble the Move bytecode pointed to
     document
@@ -84,7 +84,7 @@ SUBCOMMANDS:
     prove
             Proves a Move package
     publish
-            Publishes the modules in a Move package to the Aptos blockchain
+            Publishes the modules in a Move package to the Movement blockchain
     run
             Run a Move function
     run-script
@@ -99,11 +99,11 @@ SUBCOMMANDS:
 
 ### Sub-command help
 
-Help for sub-commands is also available. For example, see below the usage output from `aptos move compile --help`:
+Help for sub-commands is also available. For example, see below the usage output from `movement move compile --help`:
 
 ```bash
 
-Usage: aptos move compile [OPTIONS]
+Usage: movement move compile [OPTIONS]
 
 Options:
       --save-metadata
@@ -168,7 +168,7 @@ Options:
 
 ## CLI information
 
-Run the `aptos info` command to get the CLI information for debugging purposes. See an example output of the `aptos info` command:
+Run the `movement info` command to get the CLI information for debugging purposes. See an example output of the `movement info` command:
 
 ```bash
 {
