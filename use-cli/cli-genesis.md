@@ -5,34 +5,34 @@ id: "cli-genesis"
 
 ## Genesis ceremonies
 
-The `aptos` tool supports bootstrapping new blockchains through what is known as a genesis ceremony. The output of the genesis ceremony is the output of move instructions that prepares a blockchain for online operation. The input consists of:
+The `movement` tool supports bootstrapping new blockchains through what is known as a genesis ceremony. The output of the genesis ceremony is the output of move instructions that prepares a blockchain for online operation. The input consists of:
 
 - A set of validators and their configuration
 - The initial set of Move modules, known as a framework
 - A unique `ChainId` (u8) that distinguishes this from other networks
-- For test chains, there also exists an account that manages the minting of AptosCoin
+- For test chains, there also exists an account that manages the minting of MovementCoin
 
 ## Generating genesis
 
 - The genesis organizer constructs a `Layout` and distributes it.
-- The genesis organizer prepares the Aptos framework's bytecode and distributes it.
+- The genesis organizer prepares the Movement framework's bytecode and distributes it.
 - Each participant generates their `ValidatorConfiguration` and distributes it.
 - Each participant generates a `genesis.blob` from the resulting contributions.
 - The genesis organizer executes the `genesis.blob` to derive the initial waypoint and distributes it.
-- Each participant begins their `aptos-node`. The `aptos-node` verifies upon startup that the `genesis.blob` with the waypoint provided by the genesis organizer.
+- Each participant begins their `movement-node`. The `movement-node` verifies upon startup that the `genesis.blob` with the waypoint provided by the genesis organizer.
 - The blockchain will begin consensus after a quorum of stake is available.
 
-### Prepare aptos-core
+### Prepare movement-core
 
-The following sections rely on tools from the Aptos source. See [Building Aptos From Source](../../../guides/building-from-source.md) for setup.
+The following sections rely on tools from the Movement source. See [Building Movement From Source](../../../guides/building-from-source.md) for setup.
 
 ### The `layout` file
 
 The layout file contains:
 
-- `root_key`: an Ed25519 public key for AptosCoin management.
+- `root_key`: an Ed25519 public key for MovementCoin management.
 - `users`: the set of participants
-- `chain_id`: the `ChainId` or a unique integer that distinguishes this deployment from other Aptos networks
+- `chain_id`: the `ChainId` or a unique integer that distinguishes this deployment from other Movement networks
 
 An example:
 
@@ -44,17 +44,17 @@ users:
 chain_id: 8
 ```
 
-### Building the Aptos Framework
+### Building the Movement Framework
 
-From your Aptos-core repository, build the framework and package it:
+From your Movement-core repository, build the framework and package it:
 
 ```
 cargo run --package framework
-mkdir aptos-framework-release
-cp aptos-framework/releases/artifacts/current/build/**/bytecode_modules/* aptos-framework-release
+mkdir movement-framework-release
+cp movement-framework/releases/artifacts/current/build/**/bytecode_modules/* movement-framework-release
 ```
 
-The framework will be stored within the `aptos-framework-release` directory.
+The framework will be stored within the `movement-framework-release` directory.
 
 ### The `ValidatorConfiguration` file
 
@@ -84,18 +84,18 @@ full_node_host:
 stake_amount: 1
 ```
 
-To generate this using the `aptos` CLI:
+To generate this using the `movement` CLI:
 
 1. Generate your validator's keys:
 
 ```
-cargo run --package aptos -- genesis generate-keys --output-dir bobs
+cargo run --package movement -- genesis generate-keys --output-dir bobs
 ```
 
 2. Generate your `ValidatorConfiguration`:
 
 ```
-cargo run --package aptos -- \\
+cargo run --package movement -- \\
     genesis set-validator-configuration \\
     --keys-dir bobs \\
     --username bob \\
@@ -116,12 +116,12 @@ To generate the `genesis.blob` and waypoint:
 - Place all the `ValidatorConfiguration` files into the `genesis` directory.
 - Ensure that the `ValidatorConfiguration` files are listed under the set of `users` within the `layout` file.
 - Make a `framework` directory within the `genesiss` directory and place the framework release `.mv` files into the `framework` directory.
-- Use the `aptos` CLI to generate genesis and waypoint:
+- Use the `movement` CLI to generate genesis and waypoint:
 
 ```
-cargo run --package aptos -- genesis generate-genesis --local-repository-dir genesis
+cargo run --package movement -- genesis generate-genesis --local-repository-dir genesis
 ```
 
-### Starting an `aptos-node`
+### Starting an `movement-node`
 
 Upon generating the `genesis.blob` and waypoint, place them into your validator and fullnode's configuration directory and begin your validator and fullnode.
