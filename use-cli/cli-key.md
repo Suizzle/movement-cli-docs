@@ -7,11 +7,11 @@ id: "cli-key"
 
 ### Generating a key
 
-To allow generating private keys, you can use the `aptos key generate` command. You can generate
+To allow generating private keys, you can use the `movement key generate` command. You can generate
 either `x25519` or `ed25519` keys.
 
 ```bash
-$ aptos key generate --key-type ed25519 --output-file output.key
+$ movement key generate --key-type ed25519 --output-file output.key
 {
   "Result": {
     "PrivateKey Path": "output.key",
@@ -25,7 +25,7 @@ $ aptos key generate --key-type ed25519 --output-file output.key
 If you are generating an `ed25519` key, you can optionally supply a vanity prefix for the corresponding account address:
 
 ```bash
-$ aptos key generate --output-file starts_with_ace.key --vanity-prefix 0xace
+$ movement key generate --output-file starts_with_ace.key --vanity-prefix 0xace
 {
   "Result": {
     "PrivateKey Path": "starts_with_ace.key",
@@ -38,7 +38,7 @@ $ aptos key generate --output-file starts_with_ace.key --vanity-prefix 0xace
 This works for multisig accounts too:
 
 ```bash
-% aptos key generate --output-file starts_with_bee.key --vanity-prefix 0xbee --vanity-multisig
+% movement key generate --output-file starts_with_bee.key --vanity-prefix 0xbee --vanity-multisig
 {
   "Result": {
     "PrivateKey Path": "starts_with_bee.key",
@@ -49,7 +49,7 @@ This works for multisig accounts too:
 }
 ```
 
-Note the vanity flag documentation from the `aptos key generate` help:
+Note the vanity flag documentation from the `movement key generate` help:
 
 ```
 --vanity-multisig
@@ -71,10 +71,10 @@ If you want even faster vanity address generation for long prefixes, try out the
 ### Generating a peer config
 
 To allow others to connect to your node, you need to generate a peer configuration. Below command shows how you can use
-the `aptos` CLI to generate a peer configuration and write it into a file named `peer_config.yaml`.
+the `movement` CLI to generate a peer configuration and write it into a file named `peer_config.yaml`.
 
 ```bash
-$ aptos key extract-peer --output-file peer_config.yaml
+$ movement key extract-peer --output-file peer_config.yaml
 ```
 
 The above command will generate the following output on the terminal:
