@@ -1,12 +1,9 @@
 ---
-title: "Move examples"
+title: "Move"
+id: "cli-move"
 ---
 
-import CodeBlock from '@theme/CodeBlock';
-
 # Move examples
-
-This document describes how to use the `movement move` CLI tool. 
 
 ## Compiling Move
 
