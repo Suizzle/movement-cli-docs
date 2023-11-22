@@ -12,7 +12,7 @@ For example on how to use specific commands, see the following documents:
 - [Account](./cli-account.md)
 - [Key](./cli-key.md)
 - [Node](./cli-node.md)
-- [Move](../../../move/move-on-movement/cli.md)
+- [Move](./cli-move.md)
 - [Genesis](./cli-genesis.md)
 
 ## Command line help
