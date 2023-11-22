@@ -1,12 +1,12 @@
 ---
-title: "Movement CLI"
+title: "Move examples"
 ---
 
 import CodeBlock from '@theme/CodeBlock';
 
-# Use the Movement CLI
+# Movem examples
 
-The `movement` tool is a command line interface (CLI) for developing on the Movement blockchain, debugging, and for node operations. This document describes how to use the `movement` CLI tool. To download or build the CLI, follow [Install Movement CLI](../../tools/movement-cli/install-cli/index.md).
+This document describes how to use the `movement move` CLI tool. 
 
 ## Compiling Move
 
