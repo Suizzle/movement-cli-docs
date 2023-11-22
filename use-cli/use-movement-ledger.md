@@ -1,11 +1,11 @@
 ---
-title: "Use Aptos CLI with Ledger"
-id: "use-aptos-ledger"
+title: "Use Movement CLI with Ledger"
+id: "use-Movement-ledger"
 ---
 
-# Use the Aptos CLI with Ledger
+# Use the Movement CLI with Ledger
 
-The `aptos` tool can be used with your Ledger device to sign any transaction. This is the most secure way to sign transactions, as your private key never leaves your device.
+The `Movement` tool can be used with your Ledger device to sign any transaction. This is the most secure way to sign transactions, as your private key never leaves your device.
 
 NOTE: It is highly recommended to use `Ledger Nano S Plus` or `Ledger Nano X` devices. The `Ledger Nano S` device has very limited memory and may not be able to sign most of the transactions. If you are trying to sign a transaction that is too big for your device to handle, you will get an error `Wrong raw transaction length`.
 
@@ -19,7 +19,7 @@ Before you begin, make sure you have `Blind Signing` enabled on your Ledger devi
 In order to interact with your Ledger device, you must first create a new profile. This profile will be used to store your Ledger public key, and will be used to sign transactions.
 
 ```bash
-$ aptos init --profile myprofile --ledger
+$ Movement init --profile myprofile --ledger
 Configuring for profile myprofile
 Choose network from [devnet, testnet, mainnet, local, custom | defaults to devnet]
 
@@ -34,7 +34,7 @@ Please choose an index from the following 5 ledger accounts, or choose an arbitr
 Account 59836ba1dd0c845713bdab34346688d6f1dba290dbf677929f2fc20593ba0cfb has been already found onchain
 
 ---
-Aptos CLI is now set up for account 59836ba1dd0c845713bdab34346688d6f1dba290dbf677929f2fc20593ba0cfb as profile myprofile!  Run `aptos --help` for more information about commands
+Movement CLI is now set up for account 59836ba1dd0c845713bdab34346688d6f1dba290dbf677929f2fc20593ba0cfb as profile myprofile!  Run `Movement --help` for more information about commands
 {
   "Result": "Success"
 }
@@ -42,25 +42,25 @@ Aptos CLI is now set up for account 59836ba1dd0c845713bdab34346688d6f1dba290dbf6
 In the above, we have created a new profile called `myprofile` and have chosen to use the first Ledger account (index 0) to sign transactions. If there is a certain index account you would like to use, you are welcome to use it.
 
 
-After the above command, a new profile will be created in `~/.aptos/config.yml` and will look like the following:
+After the above command, a new profile will be created in `~/.Movement/config.yml` and will look like the following:
 ```yaml
   myprofile:
     public_key: "0x05a8ace09d1136181029be3e817de3619562b0da2eedbff210e2b2f92c71be70"
     account: 59836ba1dd0c845713bdab34346688d6f1dba290dbf677929f2fc20593ba0cfb
-    rest_url: "https://fullnode.devnet.aptoslabs.com"
-    faucet_url: "https://faucet.devnet.aptoslabs.com"
+    rest_url: "https://fullnode.devnet.Movementlabs.com"
+    faucet_url: "https://faucet.devnet.Movementlabs.com"
     derivation_path: "m/44'/637'/0'/0'/0'"
 ```
-Notice that the above stores the derivation path instead of private key. This is because the private key is stored on your Ledger device, and is never exposed to the `aptos` tool.
+Notice that the above stores the derivation path instead of private key. This is because the private key is stored on your Ledger device, and is never exposed to the `Movement` tool.
 
 ## Publish a package with Ledger
-Once you have created a profile, you can use it to publish a package. The `aptos` tool will prompt you to confirm the transaction on your Ledger device.
+Once you have created a profile, you can use it to publish a package. The `Movement` tool will prompt you to confirm the transaction on your Ledger device.
 Note: Make sure that you are on the same directory as where your move module is located:
 ```bash
-$ aptos move publish --profile myprofile --named-addresses hello_blockchain=myprofile
+$ Movement move publish --profile myprofile --named-addresses hello_blockchain=myprofile
 Compiling, may take a little while to download git dependencies...
-INCLUDING DEPENDENCY AptosFramework
-INCLUDING DEPENDENCY AptosStdlib
+INCLUDING DEPENDENCY MovementFramework
+INCLUDING DEPENDENCY MovementStdlib
 INCLUDING DEPENDENCY MoveStdlib
 BUILDING Examples
 package size 1755 bytes
@@ -87,7 +87,7 @@ After the above command, you will be prompted to confirm the transaction on your
 ## Common Errors
 
 ### Error: Wrong raw transaction length
-Your raw transaction or package size is too big. Currently the Aptos ledger app can only support up to 20kb transaction. If you are using a `Ledger Nano S`, the supported transaction size will be even smaller.
+Your raw transaction or package size is too big. Currently the Movement ledger app can only support up to 20kb transaction. If you are using a `Ledger Nano S`, the supported transaction size will be even smaller.
 ```bash
 {
   "Error": "Unexpected error: Error - Wrong raw transaction length"
@@ -95,7 +95,7 @@ Your raw transaction or package size is too big. Currently the Aptos ledger app 
 ```
 
 ### Error: Ledger device is locked
-Make sure your Ledger device is unlocked and you have Aptos app opened
+Make sure your Ledger device is unlocked and you have Movement app opened
 ```bash
 {
   "Error": "Unexpected error: Error - Ledger device is locked"
