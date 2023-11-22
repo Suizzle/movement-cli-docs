@@ -4,7 +4,7 @@ title: "Move examples"
 
 import CodeBlock from '@theme/CodeBlock';
 
-# Movem examples
+# Move examples
 
 This document describes how to use the `movement move` CLI tool. 
 
