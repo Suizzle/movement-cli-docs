@@ -9,7 +9,7 @@ The `movement` tool is a command line interface (CLI) for developing on the Move
 
 For example on how to use specific commands, see the following documents:
 - [Account](./cli-account.md)
-- [Config](./cli-config.md)
+- [Configuration](./cli-config.md)
 - [Faucet](./cli-faucet.md)
 - [Genesis](./cli-genesis.md)
 - [Governance](./cli-governance.md)
