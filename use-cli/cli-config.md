@@ -1,6 +1,6 @@
 ---
 title: "Configuration"
-id: "cli-configuration"
+id: "cli-config"
 ---
 
 
