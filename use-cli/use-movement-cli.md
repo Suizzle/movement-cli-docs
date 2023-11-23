@@ -8,12 +8,20 @@ id: "use-movement-cli"
 The `movement` tool is a command line interface (CLI) for developing on the Movement blockchain, debugging, and for node operations. This document describes how to use the `movement` CLI tool. To download or build the CLI, follow [Install Movement CLI](../install-cli/index.md).
 
 For example on how to use specific commands, see the following documents:
-- [Configuration and Initialization](./cli-configuration.md)
 - [Account](./cli-account.md)
-- [Key](./cli-key.md)
-- [Node](./cli-node.md)
-- [Move](./cli-move.md)
+- [Config](./cli-config.md)
+- [Faucet](./cli-faucet.md)
 - [Genesis](./cli-genesis.md)
+- [Governance](./cli-governance.md)
+- [Help](./cli-help.md)
+- [Info](./cli-info.md)
+- [Init](./cli-init.md)
+- [Key](./cli-key.md)
+- [Move](./cli-move.md)
+- [Multisig](./cli-multisig.md)
+- [Node](./cli-node.md)
+- [Stake](./cli-stake.md)
+- [Update](./cli-update.md)
 
 ## Command line help
 
